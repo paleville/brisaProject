@@ -1,6 +1,6 @@
 #include "level1.h"
 
-level1::level1(sf::RenderWindow* window)
+level1::level1(sf::RenderWindow* window, std::stack<stateClass*>* states)
 	: stateClass(window, states)
 {
 	this->initTextures();
@@ -25,8 +25,7 @@ void level1::updateKeyBinds(const float& dt)
 
 void level1::update(const float& dt)
 {
-	this->updateKeyBinds(dt);
-	
+	this->updateKeyBinds(dt);	
 	this->player->update(dt);
 }
 
@@ -43,8 +42,6 @@ void level1::initTextures()
 {
 	sf::Texture temp;
 	temp.loadFromFile("playerTex.png");
-
-	
 	this->textures["PLAYER_IDLE"] = temp;
 }
 

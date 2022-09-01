@@ -11,8 +11,8 @@ void gameClass::initWindow()
 
 void gameClass::initStates()
 {
-	this->states.push(new level1(this->window));
-	this->states.push(new mainMenuClass(this->window));	
+	this->states.push(new level1(this->window, &this->states));
+	this->states.push(new mainMenuClass(this->window, &this->states));	
 }
 
 gameClass::gameClass()

@@ -1,6 +1,6 @@
 #include "mainMenuClass.h"
 
-mainMenuClass::mainMenuClass(sf::RenderWindow* window)
+mainMenuClass::mainMenuClass(sf::RenderWindow* window, std::stack<stateClass*>* states)
 	: stateClass(window, states)
 {
 	this->background.setSize(sf::Vector2f(window->getSize().x, window->getSize().y));

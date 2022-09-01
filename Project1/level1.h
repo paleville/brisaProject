@@ -8,7 +8,7 @@ class level1 :
 
 public:
 
-	level1(sf::RenderWindow* window);
+	level1(sf::RenderWindow* window, std::stack<stateClass*>* states);
 	virtual ~level1();
 
 

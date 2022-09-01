@@ -8,7 +8,7 @@ class mainMenuClass :
 
 public:
 
-	mainMenuClass(sf::RenderWindow* window);
+	mainMenuClass(sf::RenderWindow* window, std::stack<stateClass*>* states);
 	virtual ~mainMenuClass();
 
 
