@@ -29,30 +29,18 @@ void entityClass::setPosition(const float x, const float y)
 void entityClass::move(const float& dt,const float dir_x, const float dir_y)
 {
 	this->shape.move(dir_x * this->movementSpeed * dt, dir_y * this->movementSpeed * dt);
+	if (sprite != nullptr) {
+		sprite->move(dir_x * this->movementSpeed * dt, dir_y * this->movementSpeed * dt);
+	}
 }
 
 void entityClass::update(const float& dt)
 {
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
-	{
-		this->move(dt, -1.f, 0.f);
-	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
-	{
-		this->move(dt, 1.f, 0.f);
-	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
-	{
-		this->move(dt, 0.f, -1.f);
-	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
-	{
-		this->move(dt, 0.f, 1.f);
-	}
 
 }
 
 void entityClass::render(sf::RenderTarget* target)
 {
 	target->draw(this->shape);
+	target->draw(*sprite);
 }

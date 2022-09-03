@@ -9,12 +9,14 @@ class playerClass :
 
 public:
     playerClass(float x, float y, sf::Texture* texture);
-    ~playerClass();
+    virtual ~playerClass();
 
 
 private:
-    void initVariables();
-    void initComponents();
+    virtual void update(const float& dt) override;
+
+    virtual void initVariables();
+    virtual void initComponents();
 
 };
 

@@ -1,5 +1,6 @@
 #pragma once
 #include "stateClass.h"
+#include "loadFromFile.h"
 
 
 class level1 :

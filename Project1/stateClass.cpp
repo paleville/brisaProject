@@ -18,8 +18,11 @@ const bool& stateClass::getQuit() const
 
 void stateClass::checkforQuit()
 {
+	static sf::Clock timeout;
+	if (timeout.getElapsedTime().asMilliseconds() < 500) return;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
 	{
 		this->quit = true;
+		timeout.restart();
 	}
 }

@@ -12,6 +12,7 @@ void gameClass::initWindow()
 void gameClass::initStates()
 {
 	this->states.push(new level1(this->window, &this->states));
+
 	this->states.push(new mainMenuClass(this->window, &this->states));	
 }
 
@@ -41,8 +42,8 @@ void gameClass::updateDt()
 {
 	this->dt = this->clock.restart().asSeconds();
 
-	system("cls");
-	std::cout << this->dt << "\n";
+	//system("cls");
+	//std::cout << this->dt << "\n";
 }
 
 void gameClass::upddateEvents()

@@ -26,10 +26,7 @@ protected:
 
 public:
 	entityClass();
-	~entityClass();
-
-
-	
+	virtual ~entityClass();
 
 
 

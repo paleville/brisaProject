@@ -26,7 +26,8 @@ void level1::updateKeyBinds(const float& dt)
 void level1::update(const float& dt)
 {
 	this->updateKeyBinds(dt);	
-	this->player->update(dt);
+	static_cast<entityClass*>(player)->update(dt);
+
 }
 
 void level1::render(sf::RenderTarget* target)
@@ -40,9 +41,12 @@ void level1::render(sf::RenderTarget* target)
 
 void level1::initTextures()
 {
-	sf::Texture temp;
-	temp.loadFromFile("playerTex.png");
-	this->textures["PLAYER_IDLE"] = temp;
+	std::cout << "initTextures()\n";
+
+	if (!utility::loadFromFile("textures/playerTex.png", textures["PLAYER_IDLE"]))
+	{
+		std::cout << "Failed to load texture: playerTex.png\n";
+	}
 }
 
 void level1::initPLayers()
